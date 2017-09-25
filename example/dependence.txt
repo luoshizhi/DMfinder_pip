@@ -1,0 +1,5 @@
+sh /ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/Pipeline/module/DMFinder/example/shell/GC145/step1.dmfind.sh
+sh /ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/Pipeline/module/DMFinder/example/shell/GC146/step1.dmfind.sh
+sh /ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/Pipeline/module/DMFinder/example/shell/GC144/step1.dmfind.sh
+sh /ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/Pipeline/module/DMFinder/example/shell/GC148/step1.dmfind.sh
+sh /ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/Pipeline/module/DMFinder/example/shell/GC147/step1.dmfind.sh

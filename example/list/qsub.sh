@@ -1,0 +1,1 @@
+/ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/Pipeline/module/DMFinder/bin/monitor taskmonitor -P common -q bc.q -p test -i /ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/Pipeline/module/DMFinder/example/list/dependence.txt
