@@ -10,10 +10,9 @@ use lib "$Bin/lib";
 use AnaMethod;
 
 
-my ($input,$outdir,$plot,$env,$move,$dmfind_arg,$monitorOption,$java, $help, $qsubMemory, $pymonitor, $python, $Rscript);
+my ($input,$outdir,$plot,$move,$dmfind_arg,$monitorOption,$java, $help, $qsubMemory, $pymonitor, $python, $Rscript);
 GetOptions(
 	"input:s" => \$input,
-	"env:s"=> \$env,
 	"outdir:s" => \$outdir,
 	"move:s" => \$move,
 	"m:s" => \$monitorOption,
@@ -33,7 +32,6 @@ date: 2017-08-17
 usage: perl $0 [options]
 	Common options:
 	-input*		<str>	input list. sample   bam   sv   bed   dependence.sh(optioanl)
-	-env <str>   export environment variable[\$Bin/environment.sh]
 				PATH/MANPATH/LD_LIBRARY_PATH/CFLAGS/LDFLAGS/C_INCLUDE_PATH/CPLUS_INCLUDE_PATH/LIBRARY_PATH/CPATH/R_LIBS
 	-outdir*		<str>	outdir.[./]
 	-move		<str>	if this parameter is set,final result will be moved to it from output dir.
@@ -63,9 +61,8 @@ mkpath $outdir;
 $outdir = File::Spec->rel2abs($outdir);
 
 $Rscript ||= "$Bin/bin/Rscript";
-$env ||="$Bin/environment.sh";
 $dmfind_arg ||= "--min_cyclic 1 --min_non_cyclic 1 --window 10000";
-$monitorOption ||="-P common -q bc.q -p test";
+$monitorOption ||="taskmonitor -P common -q bc.q -p test";
 $pymonitor ||="$Bin/bin/monitor";
 if($move){
 	$move = File::Spec->rel2abs($move);
@@ -95,8 +92,8 @@ foreach my $sample (keys %bam){
 	my $shell_t = "$shell/$sample" ; mkpath $shell_t;
 	###step1 dmfinder
 	my $dmfind = "$shell_t/step1.dmfind.sh";
-	my $content ="source $env&&\\\n";
-	$content .="cd $process_t  &&\\\n";
+	#my $content ="source $env&&\\\n";
+	my $content ="cd $process_t  &&\\\n";
 	$content .="perl $Bin/script/dm_find.pl $dmfind_arg --input_bam $bam{$sample} --sv $sv{$sample} --cn $bed{$sample} >$process_t/result 2>log &&\\\n";
 	$content .="python $Bin/script/plot_dm_result.py $process_t/result $sv{$sample} $sample";
 	if (exists $dependent{$sample}) {
