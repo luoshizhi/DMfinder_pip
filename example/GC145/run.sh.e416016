@@ -1,7 +1,0 @@
-Use of uninitialized value $at[0] in hash slice at /ifshk7/BC_PS/zhengwenyuan/install/Graph-0.9704/lib/Graph.pm line 829.
-Use of uninitialized value $at[0] in hash slice at /ifshk7/BC_PS/zhengwenyuan/install/Graph-0.9704/lib/Graph.pm line 829.
-rm: cannot remove `temp1.txt': No such file or directory
-rm: cannot remove `temp2.txt': No such file or directory
-rm: cannot remove `temp1.sampled.txt': No such file or directory
-rm: cannot remove `temp2.sampled.txt': No such file or directory
-rm: cannot remove `temp1.zeros.txt': No such file or directory

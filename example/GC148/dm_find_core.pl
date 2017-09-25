@@ -1,1 +1,0 @@
-/ifshk4/BC_PUB/biosoft/pipe/bc_tumor/newblc/DMFinder/dm_find_core.pl
